@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".FireguardDashboard">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fg_welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_to_the_fireguard_screen"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.001" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fg_full_name_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:boxStrokeColor="#FB4646"
+                app:endIconTint="#2C2A2A"
+                app:hintTextColor="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fg_welcome">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fg_full_name_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:hint="@string/full_name"
+                    android:inputType="textWebEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fg_license_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                app:boxStrokeColor="#FB4646"
+                app:endIconTint="#2C2A2A"
+                app:hintTextColor="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fg_full_name_layout"
+                app:layout_constraintVertical_bias="0.0">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fg_license_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:hint="@string/license"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fg_date_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="26dp"
+                app:boxStrokeColor="#FB4646"
+                app:endIconTint="#2C2A2A"
+                app:hintTextColor="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.061"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fg_license_layout"
+                app:layout_constraintVertical_bias="0.0">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fg_date_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:hint="@string/date"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/fg_spinner_hours"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/red"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.449"
+                app:layout_constraintStart_toEndOf="@+id/fg_date_layout"
+                app:layout_constraintTop_toBottomOf="@+id/fg_license_layout" />
+
+
+            <Spinner
+                android:id="@+id/fg_spinner_sites"
+                android:layout_width="300dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/red"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.352"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fg_spinner_hours" />
+
+            <TextView
+                android:id="@+id/inspection_questionnaire"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/inspection_questionnaire"
+                android:textColor="@color/black"
+                android:textSize="27sp"
+                android:textStyle="italic|bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fg_spinner_sites" />
+
+            <RadioGroup
+                android:id="@+id/q1_btn"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/q1">
+
+                <RadioButton
+                    android:id="@+id/pass1"
+                    android:onClick="pass_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/pass" />
+
+                <RadioButton
+                    android:id="@+id/fail1"
+                    android:onClick="fail_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fail" />
+
+                <RadioButton
+                    android:id="@+id/na1"
+                    android:onClick="na_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/na" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/q1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/q1"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/inspection_questionnaire"
+                tools:layout_editor_absoluteX="37dp" />
+
+            <TextView
+                android:id="@+id/q2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/q2"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/q1_btn"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <RadioGroup
+                android:id="@+id/q2_btn"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/q2">
+
+                <RadioButton
+                    android:id="@+id/pass2"
+                    android:onClick="pass_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/pass" />
+
+                <RadioButton
+                    android:id="@+id/fail2"
+                    android:onClick="fail_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fail" />
+
+                <RadioButton
+                    android:id="@+id/na2"
+                    android:onClick="na_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/na" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/q3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/q3"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+
+                app:layout_constraintTop_toBottomOf="@id/q2_btn" />
+
+            <RadioGroup
+                android:id="@+id/q3_btn"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/q3">
+
+                <RadioButton
+                    android:id="@+id/pass3"
+                    android:onClick="pass_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/pass" />
+
+                <RadioButton
+                    android:id="@+id/fail3"
+                    android:onClick="fail_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fail" />
+
+                <RadioButton
+                    android:id="@+id/na3"
+                    android:onClick="na_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/na" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/q4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/q4"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+
+                app:layout_constraintTop_toBottomOf="@id/q3_btn" />
+
+            <RadioGroup
+                android:id="@+id/q4_btn"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/q4">
+
+                <RadioButton
+                    android:id="@+id/pass4"
+                    android:onClick="pass_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/pass" />
+
+                <RadioButton
+                    android:id="@+id/fail4"
+                    android:onClick="fail_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fail" />
+
+                <RadioButton
+                    android:id="@+id/na4"
+                    android:onClick="na_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/na" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/q5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/q5"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+
+                app:layout_constraintTop_toBottomOf="@id/q4_btn" />
+
+            <RadioGroup
+                android:id="@+id/q5_btn"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/q5">
+
+                <RadioButton
+                    android:id="@+id/pass5"
+                    android:onClick="pass_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/pass" />
+
+                <RadioButton
+                    android:id="@+id/fail5"
+                    android:onClick="fail_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fail" />
+
+                <RadioButton
+                    android:id="@+id/na5"
+                    android:onClick="na_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/na" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/q6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/q6"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+
+                app:layout_constraintTop_toBottomOf="@id/q5_btn" />
+
+            <RadioGroup
+                android:id="@+id/q6_btn"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/q6">
+
+                <RadioButton
+                    android:id="@+id/pass6"
+                    android:onClick="pass_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/pass" />
+
+                <RadioButton
+                    android:id="@+id/fail6"
+                    android:onClick="fail_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fail" />
+
+                <RadioButton
+                    android:id="@+id/na6"
+                    android:onClick="na_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/na" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/q7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/q7"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+
+                app:layout_constraintTop_toBottomOf="@id/q6_btn" />
+
+            <RadioGroup
+                android:id="@+id/q7_btn"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/q7">
+
+                <RadioButton
+                    android:id="@+id/pass7"
+                    android:onClick="pass_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/pass" />
+
+                <RadioButton
+                    android:id="@+id/fail7"
+                    android:onClick="fail_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fail" />
+
+                <RadioButton
+                    android:id="@+id/na7"
+                    android:onClick="na_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/na" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/q8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/q8"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+
+                app:layout_constraintTop_toBottomOf="@id/q7_btn" />
+
+            <RadioGroup
+                android:id="@+id/q8_btn"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/q8">
+
+                <RadioButton
+                    android:id="@+id/pass8"
+                    android:onClick="pass_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/pass" />
+
+                <RadioButton
+                    android:id="@+id/fail8"
+                    android:onClick="fail_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fail" />
+
+                <RadioButton
+                    android:id="@+id/na8"
+                    android:onClick="na_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/na" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/q9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/q9"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/q8_btn" />
+
+            <RadioGroup
+                android:id="@+id/q9_btn"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/q9">
+
+                <RadioButton
+                    android:id="@+id/pass9"
+                    android:onClick="pass_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/pass" />
+
+                <RadioButton
+                    android:id="@+id/fail9"
+                    android:onClick="fail_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fail" />
+
+                <RadioButton
+                    android:id="@+id/na9"
+                    android:onClick="na_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/na" />
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fg_comments_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="26dp"
+                app:boxStrokeColor="#FB4646"
+                app:endIconTint="#2C2A2A"
+                app:hintTextColor="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/q9_btn"
+                app:layout_constraintVertical_bias="0.0">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fg_comments_input"
+                    android:layout_width="300dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:hint="@string/comments"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/submit_inspection"
+                android:onClick="submit_inspection"
+                android:layout_marginTop="26dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cornerRadius="20dp"
+                android:text="@string/submit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fg_comments_layout"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
